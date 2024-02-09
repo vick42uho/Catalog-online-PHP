@@ -1,9 +1,8 @@
 <?php 
 include('header.php');
-include('banner.php');
-include('menu.php');
+// include('menu.php');
 ?>
-
+<br><br><br><br>
 <div class="container">
           <div class="row">
             <div class="col-md-2"></div>
@@ -34,7 +33,7 @@ include('menu.php');
                     <input type="text" name="p_phone" required class="form-control">
                   </div>
                 </div>
-                
+                <br>
                 <div class="form-group">
                   <div class="col-sm-3">
                   </div>

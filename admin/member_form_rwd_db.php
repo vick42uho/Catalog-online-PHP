@@ -5,6 +5,7 @@ include('../condb.php');
 $m_id = $_POST["m_id"];
 $m_password = password_hash($_POST["m_password"], PASSWORD_DEFAULT);
 
+
 // update data using prepared statement
 $sql = "UPDATE tbl_member SET m_password = ? WHERE m_id = ?";
 $stmt = mysqli_prepare($condb, $sql);

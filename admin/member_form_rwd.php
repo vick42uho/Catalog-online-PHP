@@ -61,6 +61,7 @@ if ($ID > 0) {
   <div class="form-group">
     <div class="col-sm-2">
     </div>
+    <br>
     <div class="col-sm-4">
       <input type="hidden" name="m_id" value="<?php echo $row['m_id'];?>">
       <button type="submit" class="btn btn-primary">Reset Password</button>

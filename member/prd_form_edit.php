@@ -81,7 +81,7 @@ mysqli_stmt_close($stmt2);
             <input type="file" name="p_img" accept="image/*" class="form-control">
         </div>
     </div>
-
+<br>
     <div class="form-group">
         <div class="col-sm-2">
         </div>

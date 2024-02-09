@@ -56,7 +56,7 @@ if (!$result) {
       <input type="file" name="p_img" required accept="image/*" class="form-control">
     </div>
   </div>
-
+<br>
   <div class="form-group">
     <div class="col-sm-2">
     </div>

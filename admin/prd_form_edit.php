@@ -61,15 +61,24 @@ mysqli_stmt_close($stmt2);
             <textarea name="p_detail" class="form-control" required id="editor"><?php echo $row['p_detail']; ?></textarea>
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-sm-2 control-label">
-            ราคา :
-        </div>
-        <div class="col-sm-2">
-            <input type="number" name="p_price" required class="form-control" value="<?php echo $row['p_price']; ?>">
-        </div>
+    <br>
+  <div class="form-group">
+    <div class="row"> 
+    
+      ราคา :
+
+    <div class="col-sm-2">
+      <input type="number" name="p_price" required class="form-control" min="0" value="<?php echo $row['p_price']; ?>">
     </div>
 
+      จำนวน :
+
+    <div class="col-sm-2">
+      <input type="number" name="p_qty" required class="form-control" min="0" value="<?php echo $row['p_qty']; ?>">
+    </div>
+    </div>
+  </div>
+<br>
     <div class="form-group">
         <div class="col-sm-2 control-label">
             ภาพสินค้า :
@@ -91,6 +100,7 @@ mysqli_stmt_close($stmt2);
             <input type="hidden" name="p_m_name" value="<?php echo $m_name; ?>">
             <input type="hidden" name="p_m_edit_date" value="<?php echo date('Y-m-d H:i:s'); ?>">
             <input type="hidden" name="ref_m_id" value="<?php echo $m_id; ?>">
+            <br>
             <button type="submit" class="btn btn-primary">บันทึก</button>
         </div>
     </div>

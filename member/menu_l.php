@@ -12,7 +12,7 @@ Last Login <?php echo date('d/m/Y', strtotime($lastlogin)); ?>
 	<a href="index.php?act=password" class="list-group-item">
 		แก้ไขรหัสผ่าน
 	</a>
-	<a href="prd.php" class="list-group-item">สินค้า</a>
+	<!-- <a href="prd.php" class="list-group-item">สินค้า</a> -->
 
 	<a href="../logout.php" onclick="return confirm('Confirm?');" class="list-group-item list-group-item-danger">ออกจากระบบ</a>
 </div>

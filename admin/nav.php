@@ -28,15 +28,15 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="../../index.php" class="nav-link text-white">
         <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"></use></svg>
-        Products
+        สินค้า
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white">
+      <a href="member.php" class="nav-link text-white">
       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
-      Customers
+      สมาชิก
     </a>
     <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>

@@ -21,18 +21,18 @@ echo "
   <th width='5%'>รหัส</th>
   <th width='75%'>ความคิดเห็น</th>
   <th width='20%'>ว/ด/ป</th>
-
 </tr>
 </thead>
 ";
 
+// เพิ่มตัวแปร $i ก่อน loop
+$i = 0;
+
 while ($row = mysqli_fetch_array($result)) {
   echo "<tr>";
-  echo "<td align='center'>" . $i += 1 . '.' . "</td> ";
-//   echo "<td align='center'>" . $row["c_id"] . '.' . "</td> ";
+  echo "<td align='center'>" . ++$i . '.' . "</td> "; // แก้ไขการใช้ $i ในการแสดงลำดับ
   echo "<td>" . $row["c_detail"] .  "</td> ";
-  echo "<td>" .date('d/m/Y H:i:s',strtotime($row["c_date"]))  .  "</td> ";
-
+  echo "<td>" . date('d/m/Y H:i:s', strtotime($row["c_date"])) .  "</td> ";
 }
 
 echo "</table>";

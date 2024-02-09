@@ -25,6 +25,7 @@
       <input type="password" name="m_password2" required class="form-control">
     </div>
   </div>
+  <br>
   <div class="form-group">
     <div class="col-sm-2">
     </div>

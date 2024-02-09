@@ -1,63 +1,66 @@
-<?php 
+<?php
 session_start();
-        if(isset($_POST['m_username'])){
-				//connection
-                  include("condb.php");
-				//รับค่า user & m_password
-                  $m_username = $_POST['m_username'];
-                  $m_password = $_POST['m_password'];
+if (isset($_POST['m_username'])) {
+  //connection
+  include("condb.php");
+  //รับค่า user & m_password
+  $m_username = $_POST['m_username'];
+  $m_password = $_POST['m_password'];
 
-                  //$m_password = hash('sha512', $m_password);
+  //$m_password = hash('sha512', $m_password);
 
-                  $hash = password_hash($m_password, PASSWORD_DEFAULT);
-                //   echo $hash;
-                //   exit;
+  $hash = password_hash($m_password, PASSWORD_DEFAULT);
+    // echo $hash;
+  //   exit;
 
-                if (password_verify($m_password, $hash)) {
-                    //echo 'Password is valid!';
+  if (password_verify($m_password, $hash)) {
+    echo 'Password is valid!';
 
-                    //query 
-                  $sql="SELECT * FROM tbl_member 
-                  WHERE  m_username='".$m_username."'";
+    //query 
+    $sql = "SELECT * FROM tbl_member 
+                  WHERE  m_username='" . $m_username . "'";
 
-                  // echo $sql;
+    // echo $sql;
 
-                  // exit;
+    // exit;
 
-                  $result = mysqli_query($condb,$sql);
+    $result = mysqli_query($condb, $sql);
 
 
 
-                  // echo mysqli_num_rows($result);
+    // echo mysqli_num_rows($result);
 
-                  // exit;
-        
-                  if(mysqli_num_rows($result)==1){
+    // exit;
 
-                      $row = mysqli_fetch_array($result);
+    if (mysqli_num_rows($result) == 1) {
 
-                      $_SESSION["m_id"] = $row["m_id"];
-                      //$_SESSION["m_name"] = $row["m_name"];
-                      $_SESSION["m_level"] = $row["m_level"];
+      $row = mysqli_fetch_array($result);
+      
 
-                      if($_SESSION["m_level"]=="ADMIN"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
+      $_SESSION["m_id"] = $row["m_id"];
+      $_SESSION["m_name"] = $row["m_fname"].$row["m_name"].' '.$row["m_lname"];
+      $_SESSION["m_address"] = $row["m_address"];
+      $_SESSION["m_email"] = $row["m_email"];
+      $_SESSION["m_phone"] = $row["m_phone"];
+      $_SESSION["m_level"] = $row["m_level"];
 
-                        //echo 'R U ADMIN';
+      if ($_SESSION["m_level"] == "ADMIN") { //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 
-                        Header("Location: admin/");
+        //echo 'R U ADMIN';
 
-                      }
+        Header("Location: admin/");
+      }
 
-                      if($_SESSION["m_level"]=="MEMBER"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
-                        //echo 'R U MEMBER';
+      if ($_SESSION["m_level"] == "MEMBER") {  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+        //echo 'R U MEMBER';
 
-                        //insert login log
-                 $ref_m_id = $_SESSION["m_id"];  
-                 
-                 // echo 'ref_m_id = '.$ref_m_id;
-                 // exit;     
+        //insert login log
+        $ref_m_id = $_SESSION["m_id"];
 
-                $sql2 = "INSERT INTO tbl_login_log
+        // echo 'ref_m_id = '.$ref_m_id;
+        // exit;     
+
+        $sql2 = "INSERT INTO tbl_login_log
                 (
                 ref_m_id
                 )
@@ -67,54 +70,29 @@ session_start();
                 )
                 ";
 
-          $result2 = mysqli_query($condb, $sql2) or die ("Error in query: $sql " . mysqli_error($condb));
+        $result2 = mysqli_query($condb, $sql2) or die("Error in query: $sql " . mysqli_error($condb));
 
-          // echo $sql2;
+        // echo $sql2;
 
-          // exit; 
-                       Header("Location: member/");
+        // exit; 
+        Header("Location: member/");
+      }
+    }
+  } else {
+    echo 'Invalid password.';
+  }
 
-                      }
-
-                  }
-
-
-
-
-
-
-
-
-
-                } else {
-                    echo 'Invalid password.';
-                }
+  // exit;
+  // echo $m_password;
+  // echo '<br>';
+  // echo hash('sha512', 'user');
+  // exit;
 
 
-                exit;
-
-
-                  
-                  
-
-                  // echo $m_password;
-                  // echo '<br>';
-                  // echo hash('sha512', 'user');
-                  // exit;
-
-
-			}else{
-                    echo "<script>";
-                        echo "alert(\" user หรือ  password ไม่ถูกต้อง\");"; 
-                        echo "window.history.back()";
-                    echo "</script>";
-
-                  }
-
-        // }else{
-
-
-        //      Header("Location: login.php"); //user & m_password incorrect back to login again
-
-        // }
+} else {
+  echo "<script>";
+  echo "alert(\" user หรือ  password ไม่ถูกต้อง\");";
+  echo "window.history.back()";
+  echo "</script>";
+}
 ?>

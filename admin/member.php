@@ -7,7 +7,9 @@
       <div class="col-md-2">
         <?php include('menu_l.php');?>
       </div>
+      
       <div class="col-md-10">
+      <br><br>
         <h4>::จัดการข้อมูลสมาชิก::
           <a href="member.php?act=add" class="btn btn-primary"> +add member</a>
         </h4>

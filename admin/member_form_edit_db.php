@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ปิด Prepared Statement
     mysqli_stmt_close($stmt);
 
+ 
     // ปิดการเชื่อมต่อฐานข้อมูล
     mysqli_close($condb);
 

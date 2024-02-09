@@ -14,6 +14,7 @@
         <?php include('menu_l.php'); ?>
       </div>
       <div class="col-md-10">
+        <br><br>
         <h4>::จัดการสินค้า::
           <a href="prd.php?act=add" class="btn btn-success"> +ADD </a>
         </h4>

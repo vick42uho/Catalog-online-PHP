@@ -3,8 +3,10 @@
 include('../condb.php');
 
 $m_id = $_POST["m_id"];
-$m_password1 = $_POST["m_password1"];
-$m_password2 = $_POST["m_password2"];
+$m_password1 = password_hash($_POST["m_password1"], PASSWORD_DEFAULT);
+$m_password2 = password_hash($_POST["m_password2"], PASSWORD_DEFAULT);
+// $m_password1 = $_POST["m_password1"];
+// $m_password2 = $_POST["m_password2"];
 
 // Check password
 if ($m_password1 != $m_password2) {

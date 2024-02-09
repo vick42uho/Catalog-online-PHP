@@ -3,11 +3,11 @@
 // เชื่อมต่อฐานข้อมูล
 include('../condb.php'); 
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
-exit();
+// exit();
 
 // ตรวจสอบว่ามีการส่งข้อมูลมาหรือไม่
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $m_fname = $_POST["m_fname"];
     $m_name = $_POST["m_name"];
     $m_lname = $_POST["m_lname"];
+    $m_address = $_POST["m_address"];
     $m_email = $_POST["m_email"];
     $m_phone = $_POST["m_phone"];
     $m_img2 = $_POST["m_img2"];
@@ -43,12 +44,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         m_fname=?,
         m_name=?,
         m_lname=?,
+        m_address=?,
         m_email=?,
         m_phone=?,
         m_img=?
         WHERE m_id=?";
     $stmt = mysqli_prepare($condb, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssssi", $m_fname, $m_name, $m_lname, $m_email, $m_phone, $newname, $m_id);
+    mysqli_stmt_bind_param($stmt, "sssssssi", $m_fname, $m_name, $m_lname, $m_address, $m_email, $m_phone, $newname, $m_id);
     $result = mysqli_stmt_execute($stmt);
 
     // ปิด Prepared Statement

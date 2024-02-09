@@ -27,9 +27,12 @@ session_start();
 
                       $row = mysqli_fetch_array($result);
 
-                      $_SESSION["m_id"] = $row["m_id"];
-                      //$_SESSION["m_name"] = $row["m_name"];
-                      $_SESSION["m_level"] = $row["m_level"];
+                      $_SESSION["id"] = $row["id"];
+                      $_SESSION["name"] = $row["fname"].$row["name"].' '.$row["lname"];
+                      $_SESSION["address"] = $row["address"];
+                      $_SESSION["email"] = $row["email"];
+                      $_SESSION["phone"] = $row["phone"];
+                      $_SESSION["level"] = $row["level"];
 
                       if($_SESSION["m_level"]=="ADMIN"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 
@@ -78,7 +81,7 @@ session_start();
         }else{
 
 
-             Header("Location: login.php"); //user & m_password incorrect back to login again
+             Header("Location: ../index.php"); //user & m_password incorrect back to login again
 
         }
 ?>

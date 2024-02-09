@@ -36,6 +36,7 @@ mysqli_stmt_close($stmt);
             <input type="text" name="t_name" required class="form-control" value="<?php echo $row['t_name']; ?>">
         </div>
     </div>
+    <br>
     <div class="form-group">
         <div class="col-sm-4">
         </div>

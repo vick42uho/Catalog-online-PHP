@@ -8,7 +8,7 @@
       <select name="m_level" class="form-control" required>
         <option value="">-เลือกข้อมูล-</option>
         <option value="ADMIN">-ADMIN-</option>
-        <option value="STAFF">-MEMBER-</option>
+        <option value="MEMBER">-MEMBER-</option>
       </select>
     </div>
   </div>
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-
+<br>
   <div class="form-group">
     <div class="col-sm-2">
     </div>

@@ -2,6 +2,7 @@
 include('header.php');
 include('banner.php');
 include('menu.php');
+
 include('form_search_by_price.php');
 $act = (isset($_GET['act']) ? $_GET['act'] : '');
 if ($act == 'showbytype') {

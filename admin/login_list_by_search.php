@@ -13,7 +13,8 @@
 		<div class="col-sm-3">
 			<input type="date" name="de" class="form-control" required>
 		</div>
-		<div class="col-sm-1">
+        <br>
+		<div class="col-sm-3">
 			<button type="submit" class="btn btn-primary" name="act" value="bydate">GET REPORT</button>
 		</div>
 

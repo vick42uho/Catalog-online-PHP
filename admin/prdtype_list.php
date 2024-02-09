@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_array($result)) {
   
   // ลบข้อมูล
   echo "<td align='center'>
-  <a href='prdtype_del_db.php?ID=$row[0]' onclick=\"return confirm('ยืนยันการลบ?')\" class='btn btn-danger btn-xs'>-ลบ</a></td> ";
+  <a href='prdtype_del_db.php?ID=$row[0]' onclick=\"return confirm('ยืนยันการลบ?')\" class='btn btn-danger btn-xs'>ลบ</a></td> ";
   echo "</tr>";
 }
 

@@ -44,6 +44,16 @@
 
   <div class="form-group">
     <div class="col-sm-2 control-label">
+        address:
+    </div>
+    <div class="col-sm-4">
+        <textarea class="form-control" name="m_address" rows="3"><?php echo $row['m_address'];?></textarea>
+    </div>
+</div>
+
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
       email :
     </div>
     <div class="col-sm-6">
@@ -72,7 +82,7 @@
     </div>
   </div>
 
-
+<br>
   <div class="form-group">
     <div class="col-sm-2">
     </div>

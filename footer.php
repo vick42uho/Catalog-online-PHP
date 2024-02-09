@@ -3,7 +3,7 @@
           <div class="row">
             <div class="col-xs-12 col-md-12">
               <p align="center" class="ft">
-                @2023
+              INFERNO Copyright © 2024 Inferno - All rights reserved || Designed By: Wick 
               </p>
             </div>
           </div>

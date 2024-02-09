@@ -39,15 +39,24 @@ if (!$result) {
       <textarea name="p_detail" class="form-control" required id="editor"></textarea>
     </div>
   </div>
+  <br>
   <div class="form-group">
-    <div class="col-sm-2 control-label">
+    <div class="row"> 
+    
       ราคา :
-    </div>
+
     <div class="col-sm-2">
-      <input type="number" name="p_price" required class="form-control">
+      <input type="number" name="p_price" required class="form-control" min="0">
+    </div>
+
+      จำนวน :
+
+    <div class="col-sm-2">
+      <input type="number" name="p_qty" required class="form-control" min="0">
+    </div>
     </div>
   </div>
-
+<br>
   <div class="form-group">
     <div class="col-sm-2 control-label">
       ภาพสินค้า :
@@ -56,7 +65,7 @@ if (!$result) {
       <input type="file" name="p_img" required accept="image/*" class="form-control">
     </div>
   </div>
-
+<br>
   <div class="form-group">
     <div class="col-sm-2">
     </div>

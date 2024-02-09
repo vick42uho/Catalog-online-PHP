@@ -6,9 +6,13 @@ session_start();
 include('../condb.php');
 
 //สร้างตัวแปรจาก session 
-$m_id = $_SESSION['m_id'];
-$m_name = $_SESSION['m_name'];
-$m_level = $_SESSION['m_level'];
+$m_id = isset($_SESSION['m_id']) ? $_SESSION['m_id'] : '';
+$m_fname = isset($_SESSION['m_fname']) ? $_SESSION['m_fname'] : '';
+$m_name = isset($_SESSION['m_name']) ? $_SESSION['m_name'] : '';
+$m_lname = isset($_SESSION['m_lname']) ? $_SESSION['m_lname'] : '';
+$m_level = isset($_SESSION['m_level']) ? $_SESSION['m_level'] : '';
+$m_address = isset($_SESSION['m_address']) ? $_SESSION['m_address'] : '';
+
 
 if($m_level!='MEMBER'){
 	Header("Location: ../logout.php");
@@ -70,7 +74,6 @@ $lastlogin =  $row1['log_date'];
 
 
  ?>
-
  
 <!DOCTYPE html>
 <html lang="en">

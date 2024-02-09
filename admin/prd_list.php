@@ -28,6 +28,7 @@ echo "
 <th>ประเภทสินค้า</th>
 <th>ชื่อสินค้า</th>
 <th>ราคา</th>
+<th>จำนวน</th>
 <th>View</th>
 <th>เพิ่มโดย</th>
 <th>ว/ด/ป</th>
@@ -42,7 +43,8 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . "<img src='../pimg/" . $row['p_img'] . "' width='100'>" . "</td>";
   echo "<td>" . $row["t_name"] .  "</td> ";
   echo "<td>" . $row["p_name"] .  "</td> ";
-  echo "<td>" . $row["p_price"] .  "</td> ";
+  echo "<td>" . number_format($row["p_price"], 2) .  "</td> ";
+  echo "<td align='center'>" . $row["p_qty"] .  "</td> ";
   echo "<td align='center'>" . $row["p_view"] .  "</td> ";
   //echo "<td>" .$row["m_name"] .  "</td> ";
   echo "<td>" 

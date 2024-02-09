@@ -8,6 +8,7 @@
         <?php include('menu_l.php');?>
       </div>
       <div class="col-md-10">
+        <br><br>
         <h4>::จัดการ ประเภทสินค้า::
           <a href="prdtype.php?act=add" class="btn btn-success"> +ADD </a>
         </h4>

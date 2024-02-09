@@ -8,6 +8,7 @@ $ref_t_id = $_POST["ref_t_id"];
 $p_name = $_POST["p_name"];
 $p_detail = $_POST["p_detail"];
 $p_price = $_POST["p_price"];
+$p_qty = $_POST["p_qty"];
 $p_id = $_POST["p_id"];
 $p_m_name = $_POST["p_m_name"];
 $p_m_edit_date = $_POST["p_m_edit_date"];
@@ -40,12 +41,13 @@ $sql = "UPDATE tbl_prd SET
     p_name=?,
     p_detail=?,
     p_price=?,
+    p_qty=?,
     p_img=?,
     p_m_name=?,
     p_m_edit_date=?
     WHERE p_id=?";
 $stmt = mysqli_prepare($condb, $sql);
-mysqli_stmt_bind_param($stmt, "issssssi", $ref_t_id, $p_name, $p_detail, $p_price, $newname, $p_m_name, $p_m_edit_date, $p_id);
+mysqli_stmt_bind_param($stmt, "isssssssi", $ref_t_id, $p_name, $p_detail, $p_price, $p_qty, $newname, $p_m_name, $p_m_edit_date, $p_id);
 $result = mysqli_stmt_execute($stmt);
 
 // Close the statement

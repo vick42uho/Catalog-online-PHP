@@ -11,6 +11,7 @@
                 <?php include('menu_l.php'); ?>
             </div>
             <div class="col-md-10">
+                <br><br>
                 <h4>::รายการแจ้งปัญหาการใช้งานเว็บไซต์::
 
                 </h4>

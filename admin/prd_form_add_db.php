@@ -8,6 +8,7 @@ $ref_t_id = $_POST["ref_t_id"];
 $p_name = $_POST["p_name"];
 $p_detail = $_POST["p_detail"];
 $p_price = $_POST["p_price"];
+$p_qty = $_POST["p_qty"];
 $ref_m_id = $_POST['ref_m_id'];
 
 
@@ -33,12 +34,12 @@ if ($upload != '') {
 
 // ในส่วนนี้ใช้ prepared statements เพื่อป้องกันการทำ SQL Injection โดยให้ทุกค่าที่ส่งไปยังฐานข้อมูลผ่าน bind parameters.
 // Use prepared statements to prevent SQL Injection
-$sql = "INSERT INTO tbl_prd (ref_t_id, p_name, p_detail, p_price, p_img, ref_m_id) VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO tbl_prd (ref_t_id, p_name, p_detail, p_price, p_img, p_qty, ref_m_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($condb, $sql);
 
 if ($stmt) {
     // Bind parameters
-    mysqli_stmt_bind_param($stmt, 'issssi', $ref_t_id, $p_name, $p_detail, $p_price, $newname, $ref_m_id);
+    mysqli_stmt_bind_param($stmt, 'isssssi', $ref_t_id, $p_name, $p_detail, $p_price, $newname, $p_qty, $ref_m_id);
 
     // Execute the statement
     $result = mysqli_stmt_execute($stmt);

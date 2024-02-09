@@ -11,6 +11,7 @@
                 <?php include('menu_l.php'); ?>
             </div>
             <div class="col-md-10">
+                <br><br>
                 <h4>::จัดการ ความคิดเห็น::
                 </h4>
                 <?php

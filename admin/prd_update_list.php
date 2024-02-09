@@ -26,10 +26,11 @@ echo "
 </tr>
 </thead>
 ";
-while($row = mysqli_fetch_array($result)) { 
+$i = 0;
+while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
   //echo "<td align='center'>" .$row["lid"] .'.'."</td> "; 
-  echo "<td align='center'>" .$i += 1 .'.'."</td> "; 
+  echo "<td align='center'>" . ++$i . '.' . "</td> ";
   
   echo "<td>" 
   .$row["m_name"] 
